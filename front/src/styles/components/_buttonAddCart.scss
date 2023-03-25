@@ -1,0 +1,23 @@
+@mixin button ($background, $color) {
+  background: $background;
+  color: $color;
+  border-radius: 8px;
+  cursor: pointer;
+  border-style: none;
+  width: 80%;
+  height: 10%;
+}
+
+.product-list-item-button-active {
+  background: settings.$color-corporate;
+  @include button(settings.$color-corporate, white);
+  cursor: pointer;
+
+  &:hover{
+    background: #3672CB;
+  }
+}
+
+.product-list-item-button-Disabled{
+  @include button(#cbcbcb, black);
+}
