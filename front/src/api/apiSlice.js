@@ -16,15 +16,8 @@ export const api = createApi({
         }),
         getOneProduct: builder.query({
           query: (id) => `api/products/${id}`
-        }),
-        deleteTask: builder.mutation({
-          query: (id) => ({
-            url: `/todos/${id}`,
-            method: "DELETE"
-          }),
-          // invalidatesTags: ["Todos"]
-        }),
+        })
     })
 })
 
-export const { useGetProductsQuery, useGetOneProductQuery } = api
+export const { useGetProductsQuery, useGetOneProductQuery} = api
