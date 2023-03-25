@@ -8,6 +8,7 @@ import Loading from "./Loading";
 const ProductDisplayPage = () => {
   let { id } = useParams();
   const [product, setProduct] = useState("");
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const { data, isLoading } = useGetOneProductQuery(id);
 
   useEffect(() => {
@@ -16,20 +17,25 @@ const ProductDisplayPage = () => {
     }
   }, [data]);
 
+  const handleImageLoad = ()=> {
+    setIsImageLoaded(true);
+  }
+
   const textButton = "Add to cart";
 
   return (
     <div>
-      {isLoading ? (
+      {isLoading && !isImageLoaded ? (
         <Loading />
       ) : (
-        <>
-          <div className="container-product-display">
+        < >
+          <div className="container-product-display" style={{ visibility: isImageLoaded ? 'visible' : 'hidden' }}>
             <seccion className="product-display-img">
               <img
                 src={`http://localhost:5000/${product.image}`}
                 width="150px"
                 alt={`img-${product.name}`}
+                onLoad={handleImageLoad}
               />
             </seccion>
             <seccion className="product-display-content">
@@ -49,7 +55,7 @@ const ProductDisplayPage = () => {
               </p>
             </seccion>
           </div>
-          <div className="product-display-add-cart">
+          <div className="product-display-add-cart" style={{ visibility: isImageLoaded ? 'visible' : 'hidden' }}>
             <ButtonAddCart item={product} textButton={textButton} />
           </div>
         </>

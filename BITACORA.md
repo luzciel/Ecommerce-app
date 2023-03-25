@@ -34,5 +34,5 @@ Para visualizarlo en el navegador utilizar http://localhost:3000
 
 - Utilize Redux Toolkit, para mantener el estado global y hacer las llamadas a la API, esto ultimo empleando RTK Query.  
 - Para el ranting emplee una libreria de npm llamada React-rating.
-- Mantuve la info de los ítems en el carrito al recargar la página, usando el session store
+- Mantuve la info de los ítems en el carrito al recargar la página, usando el local storage
 - Los estilo fueron realizados solo con CSS y Saas como preprocesador.

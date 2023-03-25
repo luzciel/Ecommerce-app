@@ -60,7 +60,7 @@
 
 @media screen and (min-width: 700px) {
   .container-product-display {
-    margin-top: 2em;
+    margin-top: 0.3em;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, minmax(100px, 2fr));
@@ -113,9 +113,16 @@
 
   .product-display-add-cart {
     height: 3em;
+    width: 100%;
+    justify-content: end;
+    margin-bottom: 0;
     button {
       font-size: 2em;
       font-weight: bold;
+      margin-top: -1em;
+      width: 30%;
+      height: 100%;
+      margin-right: 3em;
     }
   }
 }
